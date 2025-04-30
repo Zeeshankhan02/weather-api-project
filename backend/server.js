@@ -19,6 +19,10 @@ async function fetchWeatherData(city) {
   return data;
 }
 
+app.get('/health', async (req, res) => {
+  res.json("Working")
+}
+
 app.get('/', async (req, res) => {
   const { city } = req.query; // ✅ fixed
   if (!city) {
