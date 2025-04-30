@@ -21,9 +21,11 @@ async function fetchWeatherData(city) {
   return data;
 }
 
-app.get('/health', async (req, res) => {
-  res.json("Working")
-}
+app.get("/health", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.json({ status: "Server is up and CORS is working" });
+});
+
 
 app.get('/', async (req, res) => {
   const { city } = req.query; // ✅ fixed
