@@ -5,11 +5,11 @@ import cors from 'cors'
 const app = express()
 
 app.use(express.json())
+
 app.use(cors({
-  origin: "*", // Allowing requests from any origin
-  allowedHeaders: "*",
-  allowedMethods: "*",
-}))
+  origin: "https://zeeshankhan02.github.io" // ✅ Only allow your GitHub Pages site
+}));
+
 const PORT = process.env.PORT || 3002
 
 async function fetchWeatherData(city) {
