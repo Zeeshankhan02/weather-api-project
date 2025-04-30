@@ -6,7 +6,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-  origin:"*"
+  origin:"https://zeeshankhan02.github.io/weather-api-project/"
 }))
 const PORT = process.env.PORT || 3002
 
