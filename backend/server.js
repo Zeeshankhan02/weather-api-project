@@ -29,11 +29,11 @@ app.get("/health", (req, res) => {
 
 app.get('/', async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "https://zeeshankhan02.github.io");
-  const { city } = req.query; // ✅ fixed
+  
+  const { city } = req.query;
   if (!city) {
-  return res.status(400).json({ error: "City is required" });
-}
-
+    return res.status(400).json({ error: "City is required" });
+  }
 
   try {
     const data = await fetchWeatherData(city);
@@ -42,6 +42,7 @@ app.get('/', async (req, res) => {
     res.status(500).json({ error: "Failed to fetch weather data" });
   }
 });
+
 
 
 app.listen(PORT,()=>{
