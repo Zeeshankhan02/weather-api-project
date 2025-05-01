@@ -4,7 +4,9 @@ import cors from "cors";
 import fetch from "node-fetch"; // for Node < 18
 
 const app = express();
-app.use(cors())
+app.use(cors({
+  origin: "https://zeeshankhan02.github.io"
+}))
 app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
@@ -16,9 +18,7 @@ async function fetchWeatherData(city) {
 }
 
 app.get("/api/weather", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://zeeshankhan02.github.io");
-
-  const { city } = req.query;
+   const { city } = req.query;
   if (!city) {
     return res.status(400).json({ error: "City is required" });
   }
@@ -32,7 +32,6 @@ app.get("/api/weather", async (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
   res.json({ status: "OK" });
 });
 
