@@ -30,8 +30,9 @@ app.get("/health", (req, res) => {
 app.get('/', async (req, res) => {
   const { city } = req.query; // ✅ fixed
   if (!city) {
-    return res.status(400).json({ error: "City is required" });
-  })
+  return res.status(400).json({ error: "City is required" });
+}
+
 
   try {
     const data = await fetchWeatherData(city);
