@@ -28,6 +28,7 @@ app.get("/health", (req, res) => {
 
 
 app.get('/', async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://zeeshankhan02.github.io");
   const { city } = req.query; // ✅ fixed
   if (!city) {
   return res.status(400).json({ error: "City is required" });
