@@ -6,10 +6,6 @@ import fetch from "node-fetch"; // for Node < 18
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-  origin: "https://zeeshankhan02.github.io"
-}));
-
 const PORT = process.env.PORT || 3002;
 
 async function fetchWeatherData(city) {
