@@ -27,7 +27,7 @@ cityInput.addEventListener('keydown',(e)=>{
 
 async function fetchWeatherData(city) {
   try {
-     const response = await fetch(`https://weather-api-project-sigma.vercel.app/api/weather?city=${encodeURIComponent(city)}`);
+     const response = await fetch(`https://weather-api-project-gray.vercel.app/api/weather?city=${encodeURIComponent(city)}`);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
