@@ -4,6 +4,7 @@ import cors from "cors";
 import fetch from "node-fetch"; // for Node < 18
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 const PORT = process.env.PORT || 3002;
